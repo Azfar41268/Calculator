@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from "react";
+import Button from "./button";
+
 
 export default function Home() {
   const [current, setCurrent] = useState('')
@@ -42,66 +44,66 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center items-center px-4 py-4 text-white space-y-3">
           {/* Numbers */}
           <div className="flex flex-wrap space-x-2 space-y-2 w-full lg:w-64 md:w-56 justify-center items-center">
-            <button onClick={() => setCurrent(current + '1')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            <Button onClick={() => setCurrent(current + '1')}>
               1
-            </button>
-            <button onClick={() => setCurrent(current + '2')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '2')}>
               2
-            </button>
-            <button onClick={() => setCurrent(current + '3')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '3')}>
               3
-            </button>
-            <button onClick={() => setCurrent(current + '4')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '4')}>
               4
-            </button>
-            <button onClick={() => setCurrent(current + '5')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '5')}>
               5
-            </button>
-            <button onClick={() => setCurrent(current + '6')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '6')}>
               6
-            </button>
-            <button onClick={() => setCurrent(current + '7')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '7')}>
               7
-            </button>
-            <button onClick={() => setCurrent(current + '8')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '8')}>
               8
-            </button>
-            <button onClick={() => setCurrent(current + '9')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '9')}>
               9
-            </button>
-            <button onClick={() => setCurrent(current + '0')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '0')}>
               0
-            </button>
-            <button onClick={() => setCurrent(current + '.')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '.')}>
               .
-            </button>
+            </Button>
           </div>
           {/* Functions */}
           <div className="flex flex-wrap space-x-2 space-y-2 w-full lg:w-64 md:w-56 justify-center items-center">
-            <button onClick={() => setCurrent(current + '+')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            <Button onClick={() => setCurrent(current + '+')}>
                 +
-              </button>
-            <button onClick={() => setCurrent(current + '-')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              </Button>
+            <Button onClick={() => setCurrent(current + '-')}>
                 -
-              </button>
-            <button onClick={() => setCurrent(current + 'x')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              </Button>
+            <Button onClick={() => setCurrent(current + 'x')}>
                 x
-              </button>
-            <button onClick={() => setCurrent(current + '÷')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              </Button>
+            <Button onClick={() => setCurrent(current + '÷')}>
               ÷
-            </button>
-            <button onClick={() => setCurrent(current + '^')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current + '^')}>
               x^
-            </button>
-            <button onClick={() => evaluate(current)} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => evaluate(current)}>
                 =
-            </button>
-            <button onClick={() => setCurrent(current.slice(0, current.length -1))} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent(current.slice(0, current.length -1))}>
                 {'<-'}
-            </button>
-            <button onClick={() => setCurrent('')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-md md:text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+            </Button>
+            <Button onClick={() => setCurrent('')} >
                 Clear
-            </button>
+            </Button>
           </div>
         </div>
       </div>
