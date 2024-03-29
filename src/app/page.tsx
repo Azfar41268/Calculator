@@ -39,14 +39,14 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center items-center px-4 py-4 text-white space-y-3">
           {/* Numbers */}
           <div className="flex flex-wrap space-x-2 space-y-2 w-full lg:w-64 md:w-56 justify-center items-center">
-            <button onClick={() => setCurrent(current + '7')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
-              7
+            <button onClick={() => setCurrent(current + '1')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              1
             </button>
-            <button onClick={() => setCurrent(current + '8')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
-              8
+            <button onClick={() => setCurrent(current + '2')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              2
             </button>
-            <button onClick={() => setCurrent(current + '9')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
-              9
+            <button onClick={() => setCurrent(current + '3')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              3
             </button>
             <button onClick={() => setCurrent(current + '4')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
               4
@@ -57,14 +57,14 @@ export default function Home() {
             <button onClick={() => setCurrent(current + '6')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
               6
             </button>
-            <button onClick={() => setCurrent(current + '1')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
-              1
+            <button onClick={() => setCurrent(current + '7')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              7
             </button>
-            <button onClick={() => setCurrent(current + '2')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
-              2
+            <button onClick={() => setCurrent(current + '8')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              8
             </button>
-            <button onClick={() => setCurrent(current + '3')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
-              3
+            <button onClick={() => setCurrent(current + '9')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              9
             </button>
             <button onClick={() => setCurrent(current + '0')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
               0
