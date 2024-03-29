@@ -20,6 +20,9 @@ export default function Home() {
       let result = eval(equation);
 
       setCurrent(`${equation} = ${result}`);
+      setTimeout(() => {
+        setCurrent(`${result}`)
+      }, 3000)
     } catch (error) {
       setCurrent("Error in expression");
     }
@@ -68,6 +71,9 @@ export default function Home() {
             </button>
             <button onClick={() => setCurrent(current + '0')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
               0
+            </button>
+            <button onClick={() => setCurrent(current + '.')} className="lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2 ">
+              .
             </button>
           </div>
           {/* Functions */}
