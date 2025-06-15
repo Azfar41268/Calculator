@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div className="flex justify-center items-center h-screen w-12/12 bg-gradient-to-tr from-black via-indigo-800 to-blue-900 py-10">
-      <div className="flex flex-col items-center justify-between p-4 space-y-4 rounded-lg bg-slate-400/15 w-screen lg:w-6/12">
+      <div className="flex flex-col items-center justify-between p-4 space-y-4 rounded-lg bg-slate-400/15 w-[90%] lg:w-6/12">
         <Top setCurrent={setCurrent} current={current} evaluate={evaluate} />
         <div className="flex flex-col md:flex-row justify-center items-center px-4 py-4 text-white space-y-3">
           {/* Numbers */}
