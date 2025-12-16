@@ -61,6 +61,8 @@ export default function Home() {
           <NumberPad setCurrent={setCurrent} current={current} />
           {/* Functions */}
           <Functions setCurrent= {setCurrent} current={current} evaluate={evaluate} />
+          {/* Download Link */}
+          <div>Download Link</div>
         </div>
       </div>
     </div>
