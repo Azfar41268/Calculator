@@ -62,7 +62,7 @@ export default function Home() {
           {/* Functions */}
           <Functions setCurrent= {setCurrent} current={current} evaluate={evaluate} />
           {/* Download Link */}
-          <div>Download Link</div>
+          <a href="" className="font-semibold">Download Link</a>
         </div>
       </div>
     </div>
