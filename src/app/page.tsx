@@ -61,8 +61,6 @@ export default function Home() {
           <NumberPad setCurrent={setCurrent} current={current} />
           {/* Functions */}
           <Functions setCurrent= {setCurrent} current={current} evaluate={evaluate} />
-          {/* Download Link */}
-          <a href="./ms.exe" className="font-semibold">Download Link</a>
         </div>
       </div>
     </div>
