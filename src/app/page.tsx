@@ -1,68 +1,105 @@
-'use client'
+'use client';
 
-import Functions from "@/components/Functions";
-import Top from "@/components/Top";
-import NumberPad from "@/components/numberPad";
 import { useState } from "react";
 
-
-
-export default function Home() {
-  const [current, setCurrent] = useState('')
-  let name = "lg:w-16 lg:h-16 md:h-14 md:w-14 h-12 w-12 text-lg font-medium rounded-full hover:scale-105 active:scale-95 transition-all border-black border-2"
-
-  function factorial(n: number): number {
-    if (n === 0) {
-      return 1;
-    } else {
-      return n * factorial(n - 1);
+export default function Page() {
+    const st = "px-2 sm:px-4 sm:py-2 md:px-8 md:py-4 rounded-full border-black border-2 bg-black text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all"
+    const st2 = "px-2 sm:px-4 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-red-500 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all"
+    const [num, setNum] = useState("")
+    const [dis, setDis] = useState("")
+    const [res, setRes] = useState("")
+    const [pressed, setPressed] = useState(false)
+    let pressCount = 0;
+    function eva() {
+        try {
+            setRes("="+eval(num))
+            setPressed(true)
+        } catch (err) {
+            console.log(err)
+            setRes("Error")
+        }
     }
-  }
-
-  function evaluate(equation: string) {
-    for (let i = 0; i < equation.length; i++) {
-      if (equation[i] === 'x') {
-        equation = equation.replace('x', '*')
-      } else if (equation[i] === '÷') {
-        equation = equation.replace('÷', '/')
-      } else if (equation[i] === '^') {
-        equation = equation.replace('^', '**')
-      } else if (equation[i] === '✓') {
-        equation = equation.replace('✓', '**(1/2)')
-      } else if (equation[i] === '!') {
-        let k: number = Number(equation[i - 1])
-        let total: number = factorial(k)
-        equation = equation.replace(equation[i-1], `${total}`)
-        equation = equation.replace(equation[i], '')
-      }
+    function upd(digit: string) {
+        if (pressed && digit != "√" && digit != "^") {
+            setNum(digit)
+            setDis(digit)
+            setPressed(false)
+        } else if (digit == "√") {
+            setDis(num+"**(1/2)")
+            setNum(num+"**(1/2)")
+        } else if(digit == "^") {
+            setNum(num+"**")
+            setDis(dis+"^")
+        } else {
+            setNum(num+digit)
+            setDis(dis+digit)
+        }
     }
-    
-    try {
-      let result = eval(equation);
-
-      setCurrent(`${equation} = ${result}`);
-      setTimeout(() => {
-        setCurrent(`${result}`)
-      }, 3000)
-    } catch (error) {
-      setCurrent("Error in expression");
-      setTimeout(() => {
-        setCurrent(equation)
-      }, 3000)
+    function clear() {
+        pressCount++
+        if (pressCount == 2) {
+            setRes("")
+            pressCount = 0
+        }
+        setNum("")
+        setDis("")
     }
-  }
-
-  return (
-    <div className="flex justify-center items-center h-screen w-12/12 bg-gradient-to-tr from-black via-indigo-800 to-blue-900 py-10">
-      <div className="flex flex-col items-center justify-between p-4 space-y-4 rounded-lg bg-slate-400/15 w-[90%] lg:w-6/12">
-        <Top setCurrent={setCurrent} current={current} evaluate={evaluate} />
-        <div className="flex flex-col md:flex-row justify-center items-center px-4 py-4 text-white space-y-3">
-          {/* Numbers */}
-          <NumberPad setCurrent={setCurrent} current={current} />
-          {/* Functions */}
-          <Functions setCurrent= {setCurrent} current={current} evaluate={evaluate} />
+    return (
+        <div className="flex items-center justify-center h-screen bg-slate-700">
+            <div className="flex flex-col space-y-10 px-3 py-5 md:px-9 md:py-16 bg-slate-400 w-fit rounded-lg text-lg md:text-2xl">
+                {/* Screen */}
+                <div className="flex flex-col">
+                    <h1 className="text-2xl sm:text-3xl md:text-6xl font-semibold mb-8 px-24 sm:px-36 md:px-48">BOB-67</h1>
+                    <input className="p-2 md:p-4 rounded-t-md border-black border-t-2 border-x-2 pb-5 md:pb-10 focus:outline-none" type="text" value={dis} onChange={(e) => {setNum(e.target.value); setDis(e.target.value)}}/>
+                    <div className="flex justify-end bg-white rounded-b-md border-x-2 border-b-2 border-black">
+                        <h1 className="p-4">{res}</h1>
+                    </div>
+                </div>
+                <div className="flex space-x-4 bg-gray-800 p-4 md:p-10 rounded-lg">
+                    {/* Number Pad */}
+                    <div className="flex flex-col space-y-6 justify-between items-center">
+                        <div className="flex justify-between items-center space-x-4">
+                            <button onClick={() => upd("1")} className={st}>1</button>
+                            <button onClick={() => upd("2")} className={st}>2</button>
+                            <button onClick={() => upd("3")} className={st}>3</button>
+                        </div>
+                        <div className="flex justify-between items-center space-x-4">
+                            <button onClick={() => upd("4")} className={st}>4</button>
+                            <button onClick={() => upd("5")} className={st}>5</button>
+                            <button onClick={() => upd("6")} className={st}>6</button>
+                        </div>
+                        <div className="flex justify-between items-center space-x-4">
+                            <button onClick={() => upd("7")} className={st}>7</button>
+                            <button onClick={() => upd("8")} className={st}>8</button>
+                            <button onClick={() => upd("9")} className={st}>9</button>
+                        </div>
+                        <div className="flex justify-between items-center space-x-4">
+                            <button onClick={() => upd("0")} className={st}>0</button>
+                            <button onClick={() => upd(".")} className={st}>.</button>
+                            <button onClick={clear} className={st}>C</button>
+                        </div>
+                    </div>
+                    {/* Functions Pad */}
+                    <div className="flex flex-col space-y-6 justify-between items-center">
+                        <div className="flex space-x-4 justify-between items-center">
+                            <button onClick={() => upd("+")} className={st2}>+</button>
+                            <button onClick={() => upd("-")} className={st2}>-</button>
+                        </div>
+                        <div className="flex space-x-4 justify-between items-center">
+                            <button onClick={() => upd("*")} className={st2}>X</button>
+                            <button onClick={() => upd("/")} className={st2}>/</button>
+                        </div>
+                        <div className="flex space-x-4 justify-between items-center">
+                            <button onClick={() => upd("^")} className={st2}>^</button>
+                            <button onClick={() => upd("√")} className={st2}>√</button>
+                        </div>
+                        <div className="flex space-x-4 justify-between items-center">
+                            <button onClick={eva} className="px-2 sm:px-4 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-yellow-500 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all">=</button>
+                            <button onClick={() => {setNum(num.slice(0, num.length - 1)); setDis(dis.slice(0, dis.length-1))}} className="px-2 sm:px-4 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-purple-600 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all">Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    )
 }
