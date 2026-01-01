@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 export default function Page() {
-    const st = "px-2 sm:px-4 sm:py-2 md:px-8 md:py-4 rounded-full border-black border-2 bg-black text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all"
-    const st2 = "px-2 sm:px-4 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-red-500 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all"
+    const st = "px-4 sm:px-6 sm:py-2 md:px-8 md:py-4 rounded-full border-black border-2 bg-black text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all"
+    const st2 = "px-4 sm:px-6 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-red-500 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all"
     const [num, setNum] = useState("")
     const [dis, setDis] = useState("")
     const [res, setRes] = useState("")
@@ -48,10 +48,12 @@ export default function Page() {
         <div className="flex items-center justify-center h-screen bg-slate-700">
             <div className="flex flex-col space-y-10 px-3 py-5 md:px-9 md:py-16 bg-slate-400 w-fit rounded-lg text-lg md:text-2xl">
                 {/* Screen */}
-                <div className="flex flex-col">
-                    <h1 className="text-2xl sm:text-3xl md:text-6xl font-semibold mb-8 px-24 sm:px-36 md:px-48">BOB-67</h1>
-                    <input className="p-2 md:p-4 rounded-t-md border-black border-t-2 border-x-2 pb-5 md:pb-10 focus:outline-none" type="text" value={dis} onChange={(e) => {setNum(e.target.value); setDis(e.target.value)}}/>
-                    <div className="flex justify-end bg-white rounded-b-md border-x-2 border-b-2 border-black">
+                <div className="flex flex-col w-full items-center justify-between">
+                    <div className="flex w-full justify-center">
+                        <h1 className="text-2xl sm:text-3xl md:text-6xl font-semibold mb-4">BOB-67</h1>
+                    </div>
+                    <input className="p-2 w-full md:p-4 rounded-t-md border-black border-t-2 border-x-2 pb-5 md:pb-10 focus:outline-none" type="text" value={dis} onChange={(e) => {setNum(e.target.value); setDis(e.target.value)}}/>
+                    <div className="flex justify-end w-full bg-white rounded-b-md border-x-2 border-b-2 border-black">
                         <h1 className="p-4">{res}</h1>
                     </div>
                 </div>
@@ -94,8 +96,8 @@ export default function Page() {
                             <button onClick={() => upd("√")} className={st2}>√</button>
                         </div>
                         <div className="flex space-x-4 justify-between items-center">
-                            <button onClick={eva} className="px-2 sm:px-4 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-yellow-500 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all">=</button>
-                            <button onClick={() => {setNum(num.slice(0, num.length - 1)); setDis(dis.slice(0, dis.length-1))}} className="px-2 sm:px-4 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-purple-600 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all">Back</button>
+                            <button onClick={eva} className="px-4 sm:px-6 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-yellow-500 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all">=</button>
+                            <button onClick={() => {setNum(num.slice(0, num.length - 1)); setDis(dis.slice(0, dis.length-1))}} className="px-4 sm:px-6 sm:py-2 md:px-8 md:py-2 rounded-full border-black border-2 bg-purple-600 text-white hover:scale-105 hover:transition-all active:scale-95 active:transition-all">Back</button>
                         </div>
                     </div>
                 </div>
